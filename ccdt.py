@@ -38,18 +38,18 @@ def doit(data1,schema1):
        for x in data1:
            if x not in schema1:
                print(x,":",data1[x],"from",data1)
-               print("not found in schema",list(schema1))
+               schema1_key = list(schema1)
+               schema1_key.sort()
+               print("not found in schema",schema1_key)
                print(" ")
   
            elif isinstance(data1[x],list):
                 for z in data1[x]:
                   for zz in z:
-
                      if zz not in schema1[x][0]:
                         print("ZZ ",zz, "not in ",schema1[x][0])
                         print(" ")
                      else:
-
                          pass
            elif isinstance(data1[x],dict):
                 doit(data1[x],schema1[x])
@@ -59,6 +59,8 @@ def doit(data1,schema1):
            else :    
                 print("types do not match",x,"in",data1,schema1)
                 print(" ")  
+
+# start here
 parser = argparse.ArgumentParser(description="validate ccdt.json file")
 parser.add_argument('-ccdt',dest="ccdt"
                         ,help="file with the ccdt.json"
@@ -78,7 +80,7 @@ with open(args.schema) as schema_file:
     schema = json.load(schema_file)
 
 for p in ccdt["channel"]:
-    doit(p,schema["channel"][0])
+    doit(p,schema["channel"][0]) # just take the first channel in the schema
   
  
  
