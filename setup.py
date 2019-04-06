@@ -2,7 +2,7 @@ from setuptools import setup
 #from distutils.core import setup, Extension
 
 setup(name = 'MQccdt.json',
-    version = '1.0',
+    version = '1.1',
     description = 'Python code to validate an IBM MQ ccdt.json file.',
     long_description= 'Python code to validate an IBM MQ ccdt.json file.',
     author='Colin Paice',

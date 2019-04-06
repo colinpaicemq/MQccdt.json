@@ -1,1 +1,6 @@
-include *
+include ./README.md
+include ./ccdt.py
+include ./IBMccdt.json
+include ./LICENSE
+
+
