@@ -11,9 +11,9 @@ setup(name = 'MQccdt.json',
     download_url='https://github.com/colinpaicemq/MQccdt.json/',
     platforms='OS Independent',
     #packages = find_packages('pymqi'),
-    #packages = ['mqtools'],
+    packages = ['MQccdt'],
     license='Python Software Foundation License',
-    keywords=('MQ IBM ccdt jsonF'),
+    keywords=('MQ IBM ccdt json'),
     include_package_data=True,
     
     classifiers = [
